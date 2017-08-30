@@ -17,5 +17,7 @@ $ pip install -r requeriments.pip
 
 In order to start the server on http://localhost:8000/ you will need to run:
 ```sh
+$ python manage.py makemigrations
+$ python manage.py migrate
 $ python manage.py runserver
 ```
