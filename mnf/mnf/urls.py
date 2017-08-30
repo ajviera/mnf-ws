@@ -1,8 +1,8 @@
 from django.contrib.auth.models import User, Group
 from django.conf.urls import url, include
 from rest_framework import routers
-from restapp import views
-from restapp import models
+from src import views
+from src import models
 from django.contrib import admin
 
 router = routers.DefaultRouter()

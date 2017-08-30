@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.contrib import admin
-from restapp.models import *
+from src.models import *
 
 admin.site.register(Product)
 admin.site.register(Favourite)

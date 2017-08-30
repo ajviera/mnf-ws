@@ -8,7 +8,7 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('restapp', '0004_order'),
+        ('src', '0004_order'),
     ]
 
     operations = [

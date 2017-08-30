@@ -10,14 +10,14 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('restapp', '0007_auto_20161226_1440'),
+        ('src', '0007_auto_20161226_1440'),
     ]
 
     operations = [
         migrations.AlterField(
             model_name='favourite',
             name='product',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='restapp.Product'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='src.Product'),
         ),
         migrations.AlterField(
             model_name='favourite',

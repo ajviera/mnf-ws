@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User, Group
 from rest_framework import serializers
-from restapp.models import *
+from src.models import *
 
 class GroupSerializer(serializers.HyperlinkedModelSerializer):
 	class Meta:
