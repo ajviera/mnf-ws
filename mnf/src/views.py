@@ -16,25 +16,21 @@ class GroupViewSet(viewsets.ModelViewSet):
 	queryset = Group.objects.all()
 	serializer_class = GroupSerializer
 
-class ProductViewSet(viewsets.ModelViewSet):
-	queryset = Product.objects.all()
-	serializer_class = ProductSerializer
+class TagViewSet(viewsets.ModelViewSet):
+	queryset = Tag.objects.all()
+	serializer_class = TagSerializer
 
-class FavouriteViewSet(viewsets.ModelViewSet):
-	queryset = Favourite.objects.all()
-	serializer_class = FavouriteSerializer
+class NoteViewSet(viewsets.ModelViewSet):
+	queryset = Note.objects.all()
+	serializer_class = NoteSerializer
 
-class mark_as_favourite(View):
-	def get(self, request, *args, **kwargs):
-		try:
-			produ = Product.objects.get(pk = kwargs['pk'])
-			# produ = get_object_or_404(Product, pk = kwargs['pk'])
-			new_favo = Favourite(product = produ, user = request.user)
-			new_favo.save()
-			return HttpResponse('Se ha marcado el producto ' + produ.name + ' como favorito, por el usuario ' + request.user.username)
-		except Product.DoesNotExist:
-			return HttpResponse('El producto numero ' + kwargs['pk'] + ' no existe')
-
-class OrderViewSet(viewsets.ModelViewSet):
-	queryset = Order.objects.all()
-	serializer_class = OrderSerializer
+# class mark_as_favourite(View):
+# 	def get(self, request, *args, **kwargs):
+# 		try:
+# 			produ = Product.objects.get(pk = kwargs['pk'])
+# 			# produ = get_object_or_404(Product, pk = kwargs['pk'])
+# 			new_favo = Favourite(product = produ, user = request.user)
+# 			new_favo.save()
+# 			return HttpResponse('Se ha marcado el producto ' + produ.name + ' como favorito, por el usuario ' + request.user.username)
+# 		except Product.DoesNotExist:
+# 			return HttpResponse('El producto numero ' + kwargs['pk'] + ' no existe')

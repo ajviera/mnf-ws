@@ -13,21 +13,14 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
 		model = User
 		fields = ('id', 'username', 'email', 'groups')
 
-class ProductSerializer(serializers.HyperlinkedModelSerializer):
+class TagSerializer(serializers.HyperlinkedModelSerializer):
 	class Meta:
-		model = Product
-		fields = ('id', 'name', 'price_unit', 'product_number', 'stock')
+		model = Tag
+		fields = ( 'id', 'title' )
 
-class FavouriteSerializer(serializers.HyperlinkedModelSerializer):
-	product = ProductSerializer(read_only=True)
-	user = UserSerializer(read_only=True)
+class NoteSerializer(serializers.HyperlinkedModelSerializer):
+	user = UserSerializer( read_only = True )
+	tag = TagSerializer( read_only = True )
 	class Meta:
-		model = Favourite
-		fields = ('id', 'product', 'user')
-
-class OrderSerializer(serializers.HyperlinkedModelSerializer):
-	product = ProductSerializer(read_only=True)
-	user = UserSerializer(read_only=True)
-	class Meta:
-		model = Order
-		fields = ('id', 'product', 'user', 'quantity', 'total_price')
+		model = Note
+		fields = ( 'id', 'title', 'context', 'message', 'user', 'tag')
